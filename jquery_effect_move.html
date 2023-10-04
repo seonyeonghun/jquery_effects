@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>총정리 실습 : 지정된 구간에서 슬라이드 만들기</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      .fish_wrap {
+        width: 1000px;
+        box-sizing: border-box;
+        border: 1px solid #333;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>animate() 실습</h1>
+    <div class="btn_wrap">
+      <button class="backBtn">Back</button>
+      <button class="goBtn">Go</button>
+    </div>
+    <div class="fish_wrap">
+      <img id="fish" src="golden_fish.png" width="100" alt="golden fish" />
+    </div>
+    <script>
+      $(function () {
+        var fish = $("#fish");
+        var count = 1;
+        $(".btn_wrap button").on("click", function () {
+          if (!fish.is(":animated")) {
+            if ($(this).hasClass("backBtn")) {
+              count--;
+              if (count < 1) {
+                count = 1;
+                return false;
+              }
+              console.log("count : " + count);
+              fish.animate({ marginLeft: "-=10%" }, 300);
+            } else {
+              // goBtn
+              count++;
+              if (count >= 10) {
+                count = 10;
+                return false;
+              }
+              fish.animate({ marginLeft: "+=10%" }, 300);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
