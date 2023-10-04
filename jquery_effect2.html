@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Effect</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>jQuery 효과 실습</h1>
+    <h2>animate() 메소드(p.294)</h2>
+    <div class="fish">
+      <img src="golden_fish.png" width="100" alt="금붕어" />
+    </div>
+    <button class="btn1">500px이동</button>
+    <button class="btn2">50px이동</button>
+    <script>
+      $(function () {
+        $(".btn1").on("click", function () {
+          if (
+            parseInt($(".fish img").css("marginLeft")) > $(window).innerWidth()
+          ) {
+            $(".fish img").css("marginLeft", 0);
+          } else {
+            $(".fish img").animate(
+              {
+                "margin-left": "+=500px",
+              },
+              1000,
+              "swing"
+            );
+          }
+        });
+        $(".btn2").on("click", function () {
+          $(".fish img").animate(
+            {
+              marginLeft: "+=50",
+            },
+            1000,
+            "swing"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
