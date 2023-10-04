@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Effect</title>
+    <style>
+      .content {
+        width: 400px;
+        background: #eee;
+        border: 1px solid #ccc;
+        padding: .5rem;
+        margin: 1rem
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  </head>
+  <body>
+    <h1>fadeTo() 메소드 실습</h1>
+    <h2>fadeTo 기본형</h2>
+    <code> $("선택자").fadeTo(효과소요시간, 투명도, 콜백함수); </code>
+    <h2>fadeTo 예시</h2>
+    <!-- 교재 p.292~293 코딩해보세요 따라서 작성! -->
+    <div>
+      <button class="btn1">slideUp</button>
+      <button class="btn2">fadeIn</button>
+    </div>
+    <div>
+      <button class="btn3">toggleSlide</button>
+    </div>
+    <div>
+      <button class="btn4">fadeTo(0.3)</button>
+      <button class="btn5">fadeTo(1)</button>
+    </div>
+    <div class="box">
+      <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        voluptatem dolor, earum veritatis hic consequuntur pariatur unde placeat
+        quia excepturi. Aperiam et quis voluptate voluptatem, minima delectus.
+        Ea, omnis blanditiis.
+      </div>
+    </div>
+    <script>
+      $(function(){
+        // slideUp 버튼 제어
+        // fadeIn 버튼 제어
+        // toggleSlide 버튼 제어
+        // fadeTo(0.3) 버튼 제어
+        // fadeTo(1) 버튼 제어
+      })
+    </script>
+  </body>
+</html>
